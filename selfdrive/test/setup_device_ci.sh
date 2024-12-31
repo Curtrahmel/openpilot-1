@@ -111,7 +111,7 @@ export GIT_PACK_THREADS=8
 
 # set up environment
 if [ ! -d "$SOURCE_DIR" ]; then
-  git clone https://github.com/commaai/openpilot.git $SOURCE_DIR
+  git clone https://github.com/Curtrahmel/opendbc.git $SOURCE_DIR
 fi
 
 if [ ! -z "$UNSAFE" ]; then
