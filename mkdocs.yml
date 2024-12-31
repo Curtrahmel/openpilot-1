@@ -1,5 +1,5 @@
 site_name: openpilot docs
-repo_url: https://github.com/commaai/openpilot/
+repo_url: https://github.com/Curtrahmel/opendbc
 site_url: https://docs.comma.ai
 
 exclude_docs: README.md
