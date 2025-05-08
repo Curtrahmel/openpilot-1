@@ -713,14 +713,14 @@ void FrogPilotAnnotatedCameraWidget::paintStandstillTimer(QPainter &p) {
   float transition = 0.0f;
 
   QColor startColor, endColor;
-  if (standstillDuration <= 60) {
+  if (standstillDuration < 60) {
     startColor = endColor = bg_colors[STATUS_ENGAGED];
-  } else if (standstillDuration <= 150) {
+  } else if (standstillDuration < 150) {
     startColor = bg_colors[STATUS_ENGAGED];
     endColor = bg_colors[STATUS_CONDITIONAL_OVERRIDDEN];
 
     transition = (standstillDuration - 60) / 30.0f;
-  } else if (standstillDuration <= 300) {
+  } else if (standstillDuration < 300) {
     startColor = bg_colors[STATUS_CONDITIONAL_OVERRIDDEN];
     endColor = bg_colors[STATUS_TRAFFIC_MODE_ENABLED];
 
@@ -729,10 +729,10 @@ void FrogPilotAnnotatedCameraWidget::paintStandstillTimer(QPainter &p) {
     startColor = endColor = bg_colors[STATUS_TRAFFIC_MODE_ENABLED];
   }
 
-  QColor blendedColor(
-    qRound(startColor.red() + transition * (endColor.red() - startColor.red())),
-    qRound(startColor.green() + transition * (endColor.green() - startColor.green())),
-    qRound(startColor.blue() + transition * (endColor.blue() - startColor.blue()))
+  QColor blendedColor = QColor::fromRgbF(
+    startColor.redF() + transition * (endColor.redF() - startColor.redF()),
+    startColor.greenF() + transition * (endColor.greenF() - startColor.greenF()),
+    startColor.blueF() + transition * (endColor.blueF() - startColor.blueF())
   );
 
   int minutes = standstillDuration / 60;
