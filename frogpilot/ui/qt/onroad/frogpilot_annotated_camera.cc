@@ -531,6 +531,7 @@ void FrogPilotAnnotatedCameraWidget::paintPathEdges(QPainter &p, const cereal::N
   }
 
   QPainterPath path;
+  path.addPolygon(scene.track_vertices);
   path.addPolygon(frogpilot_scene.track_edge_vertices);
   p.setBrush(pe);
   p.drawPath(path);
