@@ -1026,6 +1026,14 @@ FW_VERSIONS = {
       b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.00 99211-N9260 14Y',
       b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.01 99211-N9100 14A',
       b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.01 99211-N9240 14T',
+      b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.00 99211-CW020 14Z',
+      b'\xf1\x8b #\x06\x17',
+    ],
+    (Ecu.hvac, 0x7b3, None): [
+      b"\xf1\x00NX4a  97255-CW211CONTROL ASS'Y-DATC  1.05 NX4a DATC(-)1.0     ",
+    ],
+    (Ecu.parkingAdas, 0x7b1, None): [
+      b'\xf1\x10NX4  ADAS_PRK ANL 1.00 1.02 99910-CW000',
     ],
     (Ecu.fwdRadar, 0x7d0, None): [
       b'\xf1\x00NX4__               1.00 1.00 99110-N9100         ',
@@ -1033,12 +1041,21 @@ FW_VERSIONS = {
       b'\xf1\x00NX4__               1.00 1.02 99110-N9000         ',
       b'\xf1\x00NX4__               1.01 1.00 99110-N9100         ',
     ],
+    (Ecu.cornerRadar, 0x7b7, None): [
+      b'\xf1\x8b #\x05\x04',
+    ],
+    (Ecu.parkingAdas, 0x7b1, None): [
+      b'\xf1\x10NX4  ADAS_PRK ANL 1.00 1.02 99910-CW000',
+      b'\xf1\x8b\x14\x17\x05\n',
+    ],
+    (Ecu.combinationMeter, 0x76c, None): [
+      b'\xf1\x8b #\x04\x13',
+    ],
   },
   CAR.HYUNDAI_SANTA_CRUZ_1ST_GEN: {
     (Ecu.fwdCamera, 0x7c4, None): [
       b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.00 99211-CW000 14M',
       b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.00 99211-CW010 14X',
-      b'\xf1\x00NX4 FR_CMR AT USA LHD 1.00 1.00 99211-CW020 14Z',
     ],
     (Ecu.fwdRadar, 0x7d0, None): [
       b'\xf1\x00NX4__               1.00 1.00 99110-K5000         ',
